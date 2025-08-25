@@ -3,7 +3,9 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 
-load_dotenv()
+if os.getenv("RAILWAY_ENVIRONMENT") is None:
+    load_dotenv()
+
 TOKEN = os.getenv("TOKEN")
 
 intents = discord.Intents.default()
