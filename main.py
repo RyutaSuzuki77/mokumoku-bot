@@ -7,6 +7,7 @@ if os.getenv("RAILWAY_ENVIRONMENT") is None:
     load_dotenv()
 
 TOKEN = os.environ.get("TOKEN")
+print(f"TOKEN is: {repr(TOKEN)}")
 
 intents = discord.Intents.default()
 intents.message_content = True
