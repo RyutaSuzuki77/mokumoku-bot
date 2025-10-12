@@ -26,16 +26,6 @@ async def start_command(interaction: discord.Interaction):
     user_name = interaction.user.name
     await interaction.response.send_message(f"{user_name} もくもく開始")
 
-@tree.command(name="rest", description="もくもく学習を休憩します")
-async def rest_command(interaction: discord.Interaction):
-    user_name = interaction.user.name
-    await interaction.response.send_message(f"{user_name} もくもく休憩")
-
-@tree.command(name="restart", description="もくもく学習を再開します")
-async def restart_command(interaction: discord.Interaction):
-    user_name = interaction.user.name
-    await interaction.response.send_message(f"{user_name} もくもく再開")
-
 @tree.command(name="end", description="もくもく学習を終了します")
 async def end_command(interaction: discord.Interaction):
     user_name = interaction.user.name
