@@ -1,0 +1,24 @@
+name: Deploy to Lightsail
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Lightsail
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: 18.177.143.19
+          username: ubuntu
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          script: |
+            cd ~/mokumoku-bot
+            git pull
+            sudo systemctl restart mokumokubot
